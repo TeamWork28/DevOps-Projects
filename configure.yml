@@ -1,23 +1,22 @@
-apiVersion : apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-    #Unique key of the Deployment
+  # Unique key of the Deployment
   name: node-demo-app
 spec:
-    #3 Pods should exist at all times.
-    replicas: 3
-    selector:
-        matchLabels:
-            app: node-demo-app
-    template:
-        metadata:
-            labels:
-                #Apply this label to pods and default
-                #the deployment label selector to this value
-                app: node-demo-app
-        spec:
-         containers:
-         - name: node-demo-app
-          # Run this image
-           image: philippaul/node-demo-app:01
-          
+  # 3 Pods should exist at all times.
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node-demo-app
+  template:
+    metadata:
+      labels:
+        # Apply this label to pods and default
+        # the deployment label selector to this value
+        app: node-demo-app
+    spec:
+      containers:
+      - name: node-demo-app
+        # Run this image
+        image: philippaul/node-demo-app:01
